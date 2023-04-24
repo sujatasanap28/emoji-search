@@ -2,16 +2,15 @@
 
   on: push
     
-    jobs :
-      deploy:
-        name: my-web
-     uses: sujatasanap28/ssh-action@master
-     with: null
-     host: ${{ secrets.EC2_HOST }}
-     username: ${{ secrets.EC2_USERNAME }}
+  jobs :
+   deploy:
+    name: my-web
+      uses: sujatasanap28/ssh-action@master
+       with: null
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
      key: ${{ secrets.SSH_PRIVATE_KEY }}
      port: ${{ secrets.PORT }}
-     
      
 name: Build and push image to ECR
 on: push
